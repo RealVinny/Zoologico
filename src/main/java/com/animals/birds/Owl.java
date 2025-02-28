@@ -1,4 +1,9 @@
 package main.java.com.animals.birds;
 
-public class Owl {
+import main.java.com.animals.Animal;
+
+public class Owl extends Animal {
+    public Owl(String nm, String spc, int age) {
+        super(nm, spc, age);
+    }
 }

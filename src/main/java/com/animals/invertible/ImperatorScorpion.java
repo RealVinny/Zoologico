@@ -1,4 +1,9 @@
 package main.java.com.animals.invertible;
 
-public class ImperatorScorpion {
+import main.java.com.animals.Animal;
+
+public class ImperatorScorpion extends Animal {
+    public ImperatorScorpion(String nm, String spc, int age) {
+        super(nm, spc, age);
+    }
 }

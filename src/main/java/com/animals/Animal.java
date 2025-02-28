@@ -1,5 +1,7 @@
 package main.java.com.animals;
 
+import java.util.ArrayList;
+
 public class Animal {
 
     protected String name;
@@ -26,6 +28,20 @@ public class Animal {
         System.out.println("nome: " + name);
         System.out.println("especie: " + especie);
         System.out.println("idade: " + idade);
+    }
+
+    public void moverArea(ArrayList<Animal> a, ArrayList<Animal> b, Animal c){
+            a.remove(c);
+            b.add(c);
+
+    }
+
+    public void addArea(ArrayList<Animal> a, Animal b){
+        a.add(b);
+    }
+
+    public void removeArea(ArrayList<Animal> a, Animal b){
+        a.remove(b);
     }
 
 

@@ -1,4 +1,9 @@
 package main.java.com.animals.mamals;
 
-public class Giraffe {
+import main.java.com.animals.Animal;
+
+public class Giraffe extends Animal {
+    public Giraffe(String nm, String spc, int age) {
+        super(nm, spc, age);
+    }
 }

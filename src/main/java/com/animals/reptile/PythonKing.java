@@ -1,4 +1,9 @@
 package main.java.com.animals.reptile;
 
-public class PythonKing {
+import main.java.com.animals.Animal;
+
+public class PythonKing extends Animal {
+    public PythonKing(String nm, String spc, int age) {
+        super(nm, spc, age);
+    }
 }
