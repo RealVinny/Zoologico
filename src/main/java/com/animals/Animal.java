@@ -24,25 +24,21 @@ public class Animal {
         return idade;
     }
 
-    public void getInfo(){
-        System.out.println("nome: " + name);
-        System.out.println("especie: " + especie);
-        System.out.println("idade: " + idade);
+    public String getInfo(){
+        /*
+        *
+        * TODO
+        *   Arrumar a formatacao dessa string para que fique mais ou menos assim :
+        *   Nome : X
+        *   Idade : Y
+        *   Especie : Z
+        */
+
+        return name + String.valueOf(idade) + especie;
     }
 
-    public void moverArea(ArrayList<Animal> a, ArrayList<Animal> b, Animal c){
-            a.remove(c);
-            b.add(c);
 
-    }
 
-    public void addArea(ArrayList<Animal> a, Animal b){
-        a.add(b);
-    }
-
-    public void removeArea(ArrayList<Animal> a, Animal b){
-        a.remove(b);
-    }
 
 
 }
