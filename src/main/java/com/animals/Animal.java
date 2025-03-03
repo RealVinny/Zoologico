@@ -1,5 +1,6 @@
 package main.java.com.animals;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Animal {
@@ -34,7 +35,7 @@ public class Animal {
         *   Especie : Z
         */
 
-        return name + String.valueOf(idade) + especie;
+        return String.format("Nome:" + name + "\nIdade:" + idade + "\nEspecie:" + especie);
     }
 
 

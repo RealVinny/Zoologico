@@ -109,39 +109,49 @@ public class Main{
 
         System.out.println("ola " + userName + " vou te apresentar o zoologico !");
 
-        for (int i = 0; i < areas.size(); i++){
-            System.out.println(i + " " + areas.get(i).getType());
+        while(true) {
 
-        }
+            for (int i = 0; i < areas.size(); i++){
+                System.out.println(i + " " + areas.get(i).getType());
+            }
+            
+            int aonde = 0;
+            System.out.println("aonde voce deseja ir ? (apenas numeros)");
+            if(scanner.hasNextInt()){
+                aonde = scanner.nextInt();
+                scanner.nextLine();
+            }else{
+                scanner.nextLine();
+                System.out.println("Entrada invalida! vamos para a area voadora!");
+            }
 
-        System.out.println("aonde voce deseja ir ?");
-        int aonde = scanner.nextInt();
-        scanner.skip("\n");
 
-        System.out.println("voce entrou na area " + areas.get(aonde).getType());
-        System.out.println(areas.get(aonde).getDescricao());
+            System.out.println("voce entrou na area " + areas.get(aonde).getType());
+            System.out.println(areas.get(aonde).getDescricao());
 
-        while (true) {
-
-
-            System.out.println("vamos ver os animais que estão nessa area!");
             while (true) {
+
+                System.out.println("vamos ver os animais que estão nessa area!");
+
                 for (int i = 0; i < areas.get(aonde).getQuant(); i++) {
                     System.out.println("Nome:" + areas.get(aonde).getAnimalName(i));
-
                 }
 
-                System.out.println("voce deseja saber mais sobre qual animal (digite o nome completo dele ou \"voltar para voltar)?");
+                System.out.println("voce deseja saber mais sobre qual animal (digite o nome completo dele ou \"voltar\" para voltar)?");
                 String selAnm = scanner.nextLine();
 
-                if (selAnm.equalsIgnoreCase("voltar")){
-                break;
+                if (selAnm.equalsIgnoreCase("voltar")) {
+                    break;
                 } else {
                     System.out.println(areas.get(aonde).searchAnimal(selAnm));
+                    System.out.println("pressione ENTER para voltar ao menu anterior...");
+                    scanner.nextLine();
                 }
 
             }
+
         }
 
     }
+
 }
