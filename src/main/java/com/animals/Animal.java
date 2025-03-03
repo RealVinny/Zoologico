@@ -8,10 +8,12 @@ public class Animal {
     protected String name;
     protected String especie;
     protected int idade;
+    protected String sound;
 
-    public Animal(String nm, String spc, int age) {
-        name = nm; especie = spc; idade = age;
+    public Animal(String nm, String spc, int age, String snd) {
+        name = nm; especie = spc; idade = age; sound = snd;
     }
+
 
     public String getName(){
         return name;
@@ -26,20 +28,12 @@ public class Animal {
     }
 
     public String getInfo(){
-        /*
-        *
-        * TODO
-        *   Arrumar a formatacao dessa string para que fique mais ou menos assim :
-        *   Nome : X
-        *   Idade : Y
-        *   Especie : Z
-        */
 
         return String.format("Nome:" + name + "\nIdade:" + idade + "\nEspecie:" + especie);
     }
 
-
-
-
+    public String makeSound(){
+        return String.format(name + " disse " + sound);
+    }
 
 }

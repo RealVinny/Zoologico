@@ -45,11 +45,11 @@ public class Main{
 
         // birds
 
-        BlueBird blueBird = new BlueBird("Blu", "Arara-Azul", 9);
-        Falcon falcon = new Falcon("Punch", "Falcon", 7);
-        Flamingo flamingo = new Flamingo("Mingo", "Flamingo", 9);
-        Owl owl = new Owl("Ruja", "Coruja", 4);
-        Penguin penguin = new Penguin("Pingu", "Pinguim", 9);
+        BlueBird blueBird = new BlueBird("Blu", "Arara-Azul", 9, "AHHH");
+        Falcon falcon = new Falcon("Punch", "Falcon", 7, "caucau");
+        Flamingo flamingo = new Flamingo("Mingo", "Flamingo", 9, "fluminense");
+        Owl owl = new Owl("Ruja", "Coruja", 4, "CowCow");
+        Penguin penguin = new Penguin("Pingu", "Pinguim", 9, "AHHAHHHA");
 
         areaVoadora.addAnimal(blueBird);
         areaVoadora.addAnimal(falcon);
@@ -58,11 +58,11 @@ public class Main{
         areaVoadora.addAnimal(penguin);
         // fishes
 
-        ClownFish clownFish = new ClownFish("Nemo", "Peixe-Palhaco", 4);
-        Esturjao esturjao = new Esturjao("Carlos", "Esturjao", 5);
-        RaiaJamanta raiaJamanta = new RaiaJamanta("Jamana", "Raia-Jamanta", 3);
-        RedPirana redPirana = new RedPirana("Piranha", "Piranha-Vermelha", 4);
-        SharkFish sharkFish = new SharkFish("Peixao", "Peixe-Tubarao", 2);
+        ClownFish clownFish = new ClownFish("Nemo", "Peixe-Palhaco", 4, "blulbulbu");
+        Esturjao esturjao = new Esturjao("Carlos", "Esturjao", 5, " adka");
+        RaiaJamanta raiaJamanta = new RaiaJamanta("Jamana", "Raia-Jamanta", 3, "asdasd");
+        RedPirana redPirana = new RedPirana("Piranha", "Piranha-Vermelha", 4, "asdad");
+        SharkFish sharkFish = new SharkFish("Peixao", "Peixe-Tubarao", 2, "sdasd");
 
         areaAquatica.addAnimal(clownFish);
         areaAquatica.addAnimal(esturjao);
@@ -81,11 +81,11 @@ public class Main{
 */
         // mamals
 
-        Bear bear = new Bear("Polar", "Urso-Polar", 5);
-        Elephant elephant = new Elephant("Dumbo", "Elefante", 4);
-        Giraffe giraffe = new Giraffe("Mark", "Girafa", 3);
-        Kangoroo kangoroo = new Kangoroo("kanguru", "Kangoroo", 2);
-        Lion lion = new Lion("Alex", "Leao", 5);
+        Bear bear = new Bear("Polar", "Urso-Polar", 5, "roar");
+        Elephant elephant = new Elephant("Dumbo", "Elefante", 4, "fluuuu");
+        Giraffe giraffe = new Giraffe("Mark", "Girafa", 3, "nheknhek");
+        Kangoroo kangoroo = new Kangoroo("kanguru", "Kangoroo", 2, "*barulhos de soco*");
+        Lion lion = new Lion("Alex", "Leao", 5, "ROAR");
 
         areaTerrestre.addAnimal(bear);
         areaTerrestre.addAnimal(elephant);
@@ -144,6 +144,7 @@ public class Main{
                     break;
                 } else {
                     System.out.println(areas.get(aonde).searchAnimal(selAnm));
+                    System.out.println(areas.get(aonde).getAnimalObj(areas.get(aonde).searchAnimalIndex(selAnm)).makeSound());
                     System.out.println("pressione ENTER para voltar ao menu anterior...");
                     scanner.nextLine();
                 }

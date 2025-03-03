@@ -4,7 +4,8 @@ import main.java.com.animals.Animal;
 
 public class Axolotl extends Animal {
 
-    public Axolotl(String nm, String spc, int age) {
-        super(nm, spc, age);
-    }
+    public Axolotl(String nm, String spc, int age, String snd) {
+        super(nm, spc, age, snd);
+}
+    
 }

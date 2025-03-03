@@ -27,7 +27,6 @@ public class Area {
         return tamanho;
     }
 
-
    public String getDescricao(){
         return descricao;
    }
@@ -59,15 +58,31 @@ public class Area {
 
    public String searchAnimal(String name) {
 
+
        for (int i = 0; i < animais.size(); i++) {
-                if(name.equalsIgnoreCase(animais.get(i).getName())){
-                    return animais.get(i).getInfo();
-                }else if(name.equalsIgnoreCase("voltar")){
-                    return name;
-                }
+           if(name.equalsIgnoreCase(animais.get(i).getName())){
+               return animais.get(i).getInfo();
+           }else if(name.equalsIgnoreCase("voltar")){
+               return name;
+           }
        }
 
        return  "animal nao encontrado na area !";
+    }
+
+    public int searchAnimalIndex(String name){
+
+        for (int i = 0; i < animais.size(); i++) {
+            if(name.equalsIgnoreCase(animais.get(i).getName())){
+                return i;
+            }
+        }
+        System.out.println("Animal nao encotrado!");
+        return 0;
+    }
+
+    public Animal getAnimalObj(int i){
+        return animais.get(i);
     }
 
 }
