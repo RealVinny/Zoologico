@@ -32,8 +32,8 @@ public class Animal {
         return String.format("Nome:" + name + "\nIdade:" + idade + "\nEspecie:" + especie);
     }
 
-    public String makeSound(){
-        return String.format(name + " disse " + sound);
+    public void makeSound(){
+        System.out.println(sound);
     }
 
 }

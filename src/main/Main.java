@@ -11,6 +11,7 @@ import main.java.com.areas.air.AirArea;
 import main.java.com.areas.dirt.DirtArea;
 import main.java.com.areas.water.WaterArea;
 
+import java.awt.*;
 import java.lang.StringBuilder;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -19,6 +20,8 @@ import javax.swing.*;
 public class Main{
     public static void main(String[] args){
 
+
+        // Used for sistem logic
         Scanner scanner = new Scanner(System.in);
         StringBuilder userName = new StringBuilder();
         AirArea areaVoadora = new AirArea("Area separada para animais voadores", 15, "Voador");
@@ -26,6 +29,10 @@ public class Main{
         WaterArea areaAquatica = new WaterArea("Area separada para animais aquaticos", 15, "Aquatico");
 
         ArrayList<Area> areas = new ArrayList<>();
+
+        // Used for displaying UI and others
+
+
 
         areas.add(areaVoadora);
         areas.add(areaTerrestre);
@@ -45,11 +52,11 @@ public class Main{
 
         // birds
 
-        BlueBird blueBird = new BlueBird("Blu", "Arara-Azul", 9, "AHHH");
-        Falcon falcon = new Falcon("Punch", "Falcon", 7, "caucau");
-        Flamingo flamingo = new Flamingo("Mingo", "Flamingo", 9, "fluminense");
-        Owl owl = new Owl("Ruja", "Coruja", 4, "CowCow");
-        Penguin penguin = new Penguin("Pingu", "Pinguim", 9, "AHHAHHHA");
+        Animal blueBird = new BlueBird("Blu", "Arara-Azul", 9, "AHHH");
+        Animal falcon = new Falcon("Punch", "Falcon", 7, "caucau");
+        Animal flamingo = new Flamingo("Arrascaeta", "Flamengo", 9, "MENGAO");
+        Animal owl = new Owl("Ruja", "Coruja", 4, "CowCow");
+        Animal penguin = new Penguin("Pingu", "Pinguim", 9, "AHHAHHHA");
 
         areaVoadora.addAnimal(blueBird);
         areaVoadora.addAnimal(falcon);
@@ -58,14 +65,16 @@ public class Main{
         areaVoadora.addAnimal(penguin);
         // fishes
 
-        ClownFish clownFish = new ClownFish("Nemo", "Peixe-Palhaco", 4, "blulbulbu");
-        Esturjao esturjao = new Esturjao("Carlos", "Esturjao", 5, " adka");
-        RaiaJamanta raiaJamanta = new RaiaJamanta("Jamana", "Raia-Jamanta", 3, "asdasd");
-        RedPirana redPirana = new RedPirana("Piranha", "Piranha-Vermelha", 4, "asdad");
-        SharkFish sharkFish = new SharkFish("Peixao", "Peixe-Tubarao", 2, "sdasd");
+        Animal clownFish = new ClownFish("Nemo", "Peixe-Palhaco", 4, "blulbulbu");
+        Animal esturjao = new Esturjao("Carlos", "Esturjao", 5, " adka");
+        Animal raiaJamanta = new RaiaJamanta("Jamana", "Raia-Jamanta", 3, "asdasd");
+        Animal redPirana = new RedPirana("Piranha", "Piranha-Vermelha", 4, "asdad");
+        Animal sharkFish = new SharkFish("Peixao", "Peixe-Tubarao", 2, "sdasd");
+        Animal pirarucu = new Pirarucu("jobson", "branca", 3, "flapflap");
 
         areaAquatica.addAnimal(clownFish);
         areaAquatica.addAnimal(esturjao);
+        areaAquatica.addAnimal(pirarucu);
         areaAquatica.addAnimal(raiaJamanta);
         areaAquatica.addAnimal(redPirana);
         areaAquatica.addAnimal(sharkFish);
@@ -81,11 +90,11 @@ public class Main{
 */
         // mamals
 
-        Bear bear = new Bear("Polar", "Urso-Polar", 5, "roar");
-        Elephant elephant = new Elephant("Dumbo", "Elefante", 4, "fluuuu");
-        Giraffe giraffe = new Giraffe("Mark", "Girafa", 3, "nheknhek");
-        Kangoroo kangoroo = new Kangoroo("kanguru", "Kangoroo", 2, "*barulhos de soco*");
-        Lion lion = new Lion("Alex", "Leao", 5, "ROAR");
+        Animal bear = new Bear("Polar", "Urso-Polar", 5, "roar");
+        Animal elephant = new Elephant("Dumbo", "Elefante", 4, "fluuuu");
+        Animal giraffe = new Giraffe("Mark", "Girafa", 3, "nheknhek");
+        Animal kangoroo = new Kangoroo("kanguru", "Kangoroo", 2, "*barulhos de soco*");
+        Animal lion = new Lion("Alex", "Leao", 5, "ROAR");
 
         areaTerrestre.addAnimal(bear);
         areaTerrestre.addAnimal(elephant);
@@ -102,6 +111,7 @@ public class Main{
         PythonKing pythonKing = new PythonKing("Capitao", "Cobra-Pitao", 2);
         Turtle turtle = new Turtle("Rafael", "Tartaruga", 4);
 */
+
 
 
         System.out.println("Bem vindo visitante, qual seu nome ?:");
@@ -125,7 +135,6 @@ public class Main{
                 System.out.println("Entrada invalida! vamos para a area voadora!");
             }
 
-
             System.out.println("voce entrou na area " + areas.get(aonde).getType());
             System.out.println(areas.get(aonde).getDescricao());
 
@@ -142,9 +151,9 @@ public class Main{
 
                 if (selAnm.equalsIgnoreCase("voltar")) {
                     break;
-                } else {
+                }else {
                     System.out.println(areas.get(aonde).searchAnimal(selAnm));
-                    System.out.println(areas.get(aonde).getAnimalObj(areas.get(aonde).searchAnimalIndex(selAnm)).makeSound());
+                    areas.get(aonde).getAnimalObj(areas.get(aonde).searchAnimalIndex(selAnm)).makeSound();
                     System.out.println("pressione ENTER para voltar ao menu anterior...");
                     scanner.nextLine();
                 }
