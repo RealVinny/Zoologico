@@ -90,13 +90,12 @@ public class Main{
 */
         // mamals
 
-        Animal bear = new Bear("Polar", "Urso-Polar", 5, "roar");
+
         Animal elephant = new Elephant("Dumbo", "Elefante", 4, "fluuuu");
         Animal giraffe = new Giraffe("Mark", "Girafa", 3, "nheknhek");
         Animal kangoroo = new Kangoroo("kanguru", "Kangoroo", 2, "*barulhos de soco*");
         Animal lion = new Lion("Alex", "Leao", 5, "ROAR");
 
-        areaTerrestre.addAnimal(bear);
         areaTerrestre.addAnimal(elephant);
         areaTerrestre.addAnimal(giraffe);
         areaTerrestre.addAnimal(kangoroo);
@@ -111,7 +110,8 @@ public class Main{
         PythonKing pythonKing = new PythonKing("Capitao", "Cobra-Pitao", 2);
         Turtle turtle = new Turtle("Rafael", "Tartaruga", 4);
 */
-
+        Animal bear = new Bear("Polar", "Urso-Polar", 5, "roar");
+        bear.makeSound();
 
 
         System.out.println("Bem vindo visitante, qual seu nome ?:");
